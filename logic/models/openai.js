@@ -4,13 +4,10 @@ const validators = require('../validators')
 
 
 async function get(params) {
-    const { value, error } = validators.validate(params, validators.chats.get)
+    const { value, error } = validators.validate(params, validators.openai.messages)
     if (error) throw new Error(error)
-
-    const messages = await chat.get(value)
-    const completion = await getAiAnswer(messages.result.history)
   
-    return completion
+    return await getAiAnswer(value.messages)
   }
 
 

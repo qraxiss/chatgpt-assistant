@@ -35,19 +35,19 @@ module.exports.ValidationError = (message) => {
 }
 
 module.exports.NotFoundError = () => {
-    return new BaseError(404, 'Not Found Error', 'We cant find something, please be sure everythings is okay.')
+    return new BaseError(400, 'Not Found Error', 'We cant find something, please be sure everythings is okay.')
 }
 
 module.exports.TokenInvalidError = () => {
-    return new BaseError(404, 'Token Invalid Error', 'We cant decode your token, are you trying to hack us :D ? Dont push it so much.')
+    return new BaseError(400, 'Token Invalid Error', 'We cant decode your token, are you trying to hack us :D ? Dont push it so much.')
 }
 
 module.exports.TokenExpiredError = () => {
-    return new BaseError(404, 'Token Expired Error', 'Your token is expired, please login again.')
+    return new BaseError(400, 'Token Expired Error', 'Your token is expired, please login again.')
 }
 
 module.exports.ForbiddenError = () => {
-    return new BaseError(403, 'Forbidden Error', 'You cant access here.')
+    return new BaseError(400, 'Forbidden Error', 'You cant access here.')
 }
 
 module.exports.FileCorruptedError = () => {

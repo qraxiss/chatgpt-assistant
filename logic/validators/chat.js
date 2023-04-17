@@ -31,7 +31,8 @@ module.exports = {
   create,
   new_msg,
   get,
-  remove
+  remove,
+  message
 }
 
 

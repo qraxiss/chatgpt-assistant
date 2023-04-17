@@ -1,6 +1,5 @@
 const {Router} = require('express')
 const controller = require('../controllers/chat')
-const openaiController = require('../controllers/openai')
 const router = Router()
 
 router.post('/', controller.create)

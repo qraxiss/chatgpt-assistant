@@ -1,4 +1,5 @@
 const chats = require('./chat')
+const openai = require('./openai')
 
 const validate = (params, validator) => {
   const { value, error } = validator.validate(params)
@@ -9,5 +10,6 @@ const validate = (params, validator) => {
 
 module.exports = {
   validate,
-  chats
+  chats,
+  openai
 }
