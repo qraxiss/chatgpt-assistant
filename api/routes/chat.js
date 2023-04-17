@@ -7,5 +7,7 @@ router.post('/', controller.create)
 router.patch('/', controller.update)
 router.delete('/', controller.remove)
 router.get('/', controller.get)
+router.post('/chat', controller.chat)
+
 
 module.exports = router

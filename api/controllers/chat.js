@@ -22,6 +22,27 @@ class Chat {
   static async remove(req, res, next) {
     res.json(await logic.chat.remove(req.body))
   }
+
+  @ahandler
+  static async chat(req, res, next) {
+    const history = (await logic.chat.get({
+      id: req.body.id
+    })).result.history
+    
+    const messages = await logic.openai.get({
+      messages: [...history, req.body.message]
+    })
+
+    messages.slice(-2).forEach(element => {
+      logic.chat.update({
+        id: req.body.id,
+        message : element
+      })
+    });
+
+    res.json(messages)
+
+  }
 }
 
 module.exports = Chat
