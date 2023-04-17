@@ -5,7 +5,7 @@ async function create(params) {
   const { value, error } = validators.validate(params, validators.chats.create)
   if (error) throw new Error(error)
 
-  const result = await database.chats.create({id: value.id, history: [value.message]})
+  const result = await database.chats.create({ id: value.id, history: [value.message] })
   return { result: result }
 }
 

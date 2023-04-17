@@ -6,7 +6,6 @@ const messageSchema = new Schema({
     content: String
 }, { _id: false });
 
-
 const chatSchema = new Schema({
     history: {
         type: [messageSchema],

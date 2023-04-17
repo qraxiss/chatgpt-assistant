@@ -1,6 +1,4 @@
 const logic = require('../../logic')
-
-const openaiController = require('../controllers/openai')
 const { ahandler } = require('../../errors')
 
 

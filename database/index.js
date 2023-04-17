@@ -1,10 +1,8 @@
 const DotEnv = require('dotenv') // Environment file
-const Mongoose = require('mongoose') // Database
-
-// collections
-const chats = require('./models/chat')
-
 DotEnv.config({ path: __dirname + '/.env' }) // Read config file
+
+const Mongoose = require('mongoose') // Database
+const chats = require('./models/chat')
 
 //Connect to the MongoDB
 try {

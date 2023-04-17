@@ -1,5 +1,4 @@
 const getAiAnswer = require('../helpers/openai')
-const chat = require('./chat')
 const validators = require('../validators')
 
 
@@ -9,7 +8,6 @@ async function get(params) {
   
     return await getAiAnswer(value.messages)
   }
-
 
 module.exports = {
     get

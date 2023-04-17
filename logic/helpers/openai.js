@@ -1,13 +1,11 @@
 const DotEnv = require('dotenv') // Environment file
 DotEnv.config({ path: __dirname + '/.env' }) // Read config file
 
-
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
     apiKey: process.env.OPEN_AI,
 });
-
 const openai = new OpenAIApi(configuration);
 
 async function getAiAnswer(messages) {

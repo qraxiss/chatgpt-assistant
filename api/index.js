@@ -4,17 +4,6 @@ const Morgan = require('morgan') // Terminal logging
 const { status500 } = require('../errors') // Error Models
 const { MongoConnection } = require('../logic') //Express session manager
 
-const getAiAnswer = require('../logic/helpers/openai')
-
-// getAiAnswer([
-//   {
-//       "role": "user",
-//       "content": "deneme mesaj"
-//   }
-// ]).then((res) => {
-//   console.log(res.data.choices[0].message)
-// })
-
 //Initilaziation
 const app = Express()
 
