@@ -1,5 +1,6 @@
 const logic = require('../../logic')
 const { ahandler } = require('../../errors')
+const { messages } = require('../../logic/validators/openai')
 
 
 class Chat {
@@ -33,12 +34,14 @@ class Chat {
       messages: [...history, req.body.message]
     })
 
-    messages.slice(-2).forEach(element => {
-      logic.chat.update({
-        id: req.body.id,
-        message : element
-      })
-    });
+    await logic.chat.update({
+      id: req.body.id,
+      message : req.body.message
+    })
+    await logic.chat.update({
+      id: req.body.id,
+      message : messages[messages.length-1]
+    })
 
     res.json(messages)
 
